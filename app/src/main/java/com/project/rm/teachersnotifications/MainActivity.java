@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference mNomeCorsoRef = mRootRef.child("NomeCorso");
                 mNomeCorsoRef.setValue(cCorso);
                 mMessRef.setValue(msg);
+                etMsg.getText().clear();
+                etMsg.clearFocus();
+                Toast.makeText(getApplicationContext(),"Messaggio inviato",Toast.LENGTH_LONG).show();
             }
         });
 
