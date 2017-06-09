@@ -3,6 +3,7 @@ package com.project.rm.teachersnotifications;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         tvMsg =(TextView)findViewById(R.id.tvMsg);
         etMsg=(EditText)findViewById(R.id.etMsg);
         btSend =(Button)findViewById(R.id.btSend);
+
+
     }
 
     private void Corso_selected(String t){cCorso=t;}

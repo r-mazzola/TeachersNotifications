@@ -9,7 +9,7 @@
     </style>
 
     <style name="CustomTitle" parent="@android:style/TextAppearance.Widget.TextView">
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">#FFFF</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-condensed</item>
         <item name="android:textSize">24sp</item>
