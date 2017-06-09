@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TeachersNotifications</string>
+
+    <string-array name="corsi">
+        <item>Sistemi Operativi</item>
+        <item>Fondamenti di automatica</item>
+        <item>Infrmatica II</item>
+    </string-array>
+
 </resources>
