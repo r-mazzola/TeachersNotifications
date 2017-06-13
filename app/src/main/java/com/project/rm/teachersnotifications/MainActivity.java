@@ -1,9 +1,11 @@
 package com.project.rm.teachersnotifications;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,17 +75,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String msg = etMsg.getText().toString();
-                DatabaseReference mCorsoRef = mRootRef.child(cCorso);
-                DatabaseReference mMessRef = mCorsoRef.child("Messaggio");
-                DatabaseReference mNomeCorsoRef = mRootRef.child("NomeCorso");
-                mNomeCorsoRef.setValue(cCorso);
-                mMessRef.setValue(msg);
-                etMsg.getText().clear();
-                etMsg.clearFocus();
-                Toast.makeText(getApplicationContext(),"Messaggio inviato",Toast.LENGTH_LONG).show();
+                if(msg.equals("")){
+                    hideKeyboard();
+                    Toast.makeText(getApplicationContext(),"Inserire un messaggio!",Toast.LENGTH_LONG).show();
+                }else{
+
+                    DatabaseReference mNomeCorsoRef = mRootRef.child("NomeCorso");
+                    DatabaseReference mCorsoRef = mRootRef.child(cCorso);
+                    DatabaseReference mMessRef = mCorsoRef.child("Messaggio");
+//                    mNomeCorsoRef.setValue(cCorso);
+                    mMessRef.setValue(msg);
+                    etMsg.getText().clear();
+                    etMsg.clearFocus();
+                    hideKeyboard();
+                    Toast.makeText(getApplicationContext(),"\""+cCorso+": "+msg+"\" inviato",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
 
+    }
+
+    public void hideKeyboard(){
+        // Check if no view has focus:
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
