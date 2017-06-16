@@ -2,13 +2,13 @@
     <string name="app_name">TeachersNotifications</string>
 
     <string-array name="corsi">
-        <item>sistemi operativi</item>
-        <item>fondamenti di automatica</item>
-        <item>informatica II</item>
-        <item>Fisica</item>
-        <item>Fisica II</item>
-        <item>Analisi</item>
+        <item>Analisi I</item>
         <item>Chimica</item>
+        <item>Fisica I</item>
+        <item>Fisica II</item>
+        <item>Fondamenti di automatica</item>
+        <item>Sistemi operativi</item>
+        <!--<item>Chimica</item>-->
     </string-array>
 
 </resources>
