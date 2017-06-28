@@ -3,6 +3,6 @@
     <color name="colorPrimary">#143a6c</color>
     <color name="colorPrimaryDark">#0c2341</color>
     <color name="colorAccent">#5390df</color>
-    <color name="description">#999999</color>
-    <color name="title">#222222</color>
+    <color name="testoMessaggio">#999999</color>
+    <color name="corso">#222222</color>
 </resources>

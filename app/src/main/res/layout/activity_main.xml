@@ -101,8 +101,17 @@
             android:layout_height="wrap_content"
             android:text="Invia"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/etMsg"
             android:layout_centerHorizontal="true" />
+
+        <ListView
+            android:id="@+id/lvMessaggi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btSend"
+            android:layout_marginTop="20dp" />
 
     </RelativeLayout>
 </FrameLayout>
