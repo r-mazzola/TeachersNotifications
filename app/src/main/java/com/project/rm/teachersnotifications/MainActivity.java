@@ -5,14 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseReference databaseMessages;
 
-    List<Messaggio> messaggioList;
+    List<Messaggio> messaggeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         spCorso =(Spinner) findViewById(R.id.spCorso);
         btSend =(Button)findViewById(R.id.btSend);
         lvMessaggi=(ListView)findViewById(R.id.lvMessaggi);
-        messaggioList=new ArrayList<>();
+        messaggeList =new ArrayList<>();
 
 
         databaseMessages = FirebaseDatabase.getInstance().getReference("messages");
@@ -67,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
         databaseMessages.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                messaggioList.clear();
+                messaggeList.clear();
                 for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
                     Messaggio messaggio = messageSnapshot.getValue(Messaggio.class);
-                    messaggioList.add(messaggio);
+                    messaggeList.add(messaggio);
                 }
 
-                MessageList adapter = new MessageList(MainActivity.this, messaggioList);
+                MessageListAdapter adapter = new MessageListAdapter(MainActivity.this, messaggeList);
                 lvMessaggi.setAdapter(adapter);
             }
 

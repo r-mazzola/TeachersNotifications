@@ -15,11 +15,11 @@ import java.util.List;
  * Created by rm on 28/06/2017.
  */
 
-public class MessageList extends ArrayAdapter<Messaggio> {
+public class MessageListAdapter extends ArrayAdapter<Messaggio> {
     private Activity context;
     private List<Messaggio> messageList;
 
-    public MessageList(Activity context, List<Messaggio> messageList){
+    public MessageListAdapter(Activity context, List<Messaggio> messageList){
          super(context,R.layout.list_layout, messageList);
         this.context=context;
         this.messageList=messageList;
