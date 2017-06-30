@@ -8,7 +8,11 @@
         <item>Fisica II</item>
         <item>Fondamenti di automatica</item>
         <item>Sistemi operativi</item>
-        <!--<item>Chimica</item>-->
+        <item>Calcolatori elettronici</item>
+        <item>Informatica II</item>
+        <item>Geometria e algebra lineare</item>
+        <item>Economia e organizzzazione aziendale</item>
+        <item>Fondamenti di elettronica</item>
     </string-array>
 
 </resources>

@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             hideKeyboard();
             Toast.makeText(this,"\""+corso+": "+testo+"\" inviato alle "+timestamp, Toast.LENGTH_LONG).show();
         }else{
+            hideKeyboard();
             Toast.makeText(this, "Inserire un messaggio", Toast.LENGTH_LONG).show();
         }
     }
